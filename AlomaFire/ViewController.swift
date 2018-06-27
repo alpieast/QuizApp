@@ -15,13 +15,13 @@ class ViewController: UIViewController {
     let baseUrl = "https://private-anon-2a496da62c-quizmasters.apiary-mock.com/questions"
     var questString: [String] = []
     var answerString: [String] = []
-    var onlyAnswer: [String] = []
-    var onlyBool: [String] = []
+    var onlyAnswer: [[String]] = []
+    var onlyBool: [[String]] = []
     var answer1: [String] = []
     
     
     var questAnswerString: [(String,String,[(String)],[(Bool)])] = []
-    var boolAnswerString: [([String],[Bool])] = []
+    var boolAnswerString: [(String,Bool)] = []
 
     
     var i = 0
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
             
             //print (i)
             self.lblQuestion.text = self.questString[self.i]
-            self.btnAnswer1.setTitle(self.onlyAnswer[self.a], for: .normal)
+//            self.btnAnswer1.setTitle(self.onlyAnswer[self.a], for: .normal)
             self.a += 1
             self.i += 1
             self.lblQuestionNum.text = "Question: \(i)"
@@ -126,27 +126,26 @@ class ViewController: UIViewController {
                    
                     self.questString.insert("\(json["question"])", at: 0)
                     self.answerString.insert("\(json["choices"])", at: 0)
-                    self.onlyAnswer.insert("\(json["choices"].arrayValue.map({$0["choice"].stringValue}))", at: 0)
-                    self.onlyBool.insert("\(json["choices"].arrayValue.map({$0["correct"].stringValue}))", at: 0)
-                    
+                    self.onlyAnswer.insert(json["choices"].arrayValue.map({$0["choice"].stringValue}), at: 0)
+                    self.onlyBool.insert(json["choices"].arrayValue.map({$0["correct"].stringValue}), at: 0)
                     
                     
                    
                     
                 };
                 
-                self.answer1.insert("\(self.onlyAnswer[0])", at: 0)
-                print(self.answer1[0])
-               
                 
                 if (self.i < 10) {
-                        self.lblQuestion.text = self.questString[self.i]
-                        self.btnAnswer1.setTitle(self.onlyAnswer[self.a],for: .normal)
-                        //self.btnAnswer2.setTitle(<#T##title: String?##String?#>, for: .normal)
-                        self.a += 1
-                        self.i = self.i+1
-                        self.lblQuestionNum.text = "Question: \(self.i)"
-                        self.lblTotalPt.text = "Total Point is: \(self.a)"
+                    self.lblQuestion.text = self.questString[self.i]
+                    self.btnAnswer1.setTitle(self.onlyAnswer[self.a][0],for: .normal)
+                    self.btnAnswer2.setTitle(self.onlyAnswer[self.a][1], for: .normal)
+                    self.btnAnswer3.setTitle(self.onlyAnswer[self.a][2], for: .normal)
+                    self.btnAnswer4.setTitle(self.onlyAnswer[self.a][3], for: .normal)
+
+                    self.a += 1
+                    self.i = self.i+1
+                    self.lblQuestionNum.text = "Question: \(self.i)"
+                    self.lblTotalPt.text = "Total Point is: \(self.a)"
                    
                 }
                 
