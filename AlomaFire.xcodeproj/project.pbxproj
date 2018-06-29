@@ -8,21 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		05377F2B20DD270D007DE077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05377F2A20DD270D007DE077 /* AppDelegate.swift */; };
-		05377F2D20DD270D007DE077 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05377F2C20DD270D007DE077 /* ViewController.swift */; };
+		05377F2D20DD270D007DE077 /* quizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05377F2C20DD270D007DE077 /* quizViewController.swift */; };
 		05377F3020DD270D007DE077 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05377F2E20DD270D007DE077 /* Main.storyboard */; };
 		05377F3220DD270D007DE077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05377F3120DD270D007DE077 /* Assets.xcassets */; };
 		05377F3520DD270D007DE077 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05377F3320DD270D007DE077 /* LaunchScreen.storyboard */; };
+		05CCBE3520E62E0300F4E3D6 /* startViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CCBE3420E62E0300F4E3D6 /* startViewController.swift */; };
 		90236B32A07EECF9BA97F33B /* Pods_AlomaFire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586650ED05AB522B5761F34D /* Pods_AlomaFire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		05377F2720DD270D007DE077 /* AlomaFire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlomaFire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05377F2A20DD270D007DE077 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		05377F2C20DD270D007DE077 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		05377F2C20DD270D007DE077 /* quizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quizViewController.swift; sourceTree = "<group>"; };
 		05377F2F20DD270D007DE077 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		05377F3120DD270D007DE077 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05377F3420DD270D007DE077 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05377F3620DD270D007DE077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05CCBE3420E62E0300F4E3D6 /* startViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startViewController.swift; sourceTree = "<group>"; };
 		586650ED05AB522B5761F34D /* Pods_AlomaFire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlomaFire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3790A1E12FEE89A02A73B0 /* Pods-AlomaFire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlomaFire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlomaFire/Pods-AlomaFire.debug.xcconfig"; sourceTree = "<group>"; };
 		EB807C85B55E8A423BDC3F71 /* Pods-AlomaFire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlomaFire.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlomaFire/Pods-AlomaFire.release.xcconfig"; sourceTree = "<group>"; };
@@ -62,7 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				05377F2A20DD270D007DE077 /* AppDelegate.swift */,
-				05377F2C20DD270D007DE077 /* ViewController.swift */,
+				05377F2C20DD270D007DE077 /* quizViewController.swift */,
+				05CCBE3420E62E0300F4E3D6 /* startViewController.swift */,
 				05377F2E20DD270D007DE077 /* Main.storyboard */,
 				05377F3120DD270D007DE077 /* Assets.xcassets */,
 				05377F3320DD270D007DE077 /* LaunchScreen.storyboard */,
@@ -203,7 +206,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05377F2D20DD270D007DE077 /* ViewController.swift in Sources */,
+				05377F2D20DD270D007DE077 /* quizViewController.swift in Sources */,
+				05CCBE3520E62E0300F4E3D6 /* startViewController.swift in Sources */,
 				05377F2B20DD270D007DE077 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

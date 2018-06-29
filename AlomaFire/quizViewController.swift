@@ -10,7 +10,10 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITextFieldDelegate {
+    
+    
+    
 
     let baseUrl = "https://private-anon-2a496da62c-quizmasters.apiary-mock.com/questions"
     var questString: [String] = []
@@ -21,11 +24,9 @@ class ViewController: UIViewController {
     var choiceTwo: Bool = false
     var choiceThree: Bool = false
     var choiceFour: Bool = false
-
+    var userName = String()
+    var trueFalse: Bool = false
     
-    
-    var questAnswerString: [(String,String,[(String)],[(Bool)])] = []
-    var boolAnswerString: [(String,Bool)] = []
 
     
     var i = 0
@@ -45,18 +46,38 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnAnswer3: UIButton!
     @IBOutlet weak var btnAnswer4: UIButton!
     
+    @IBOutlet weak var questionTrueFalseColorOne: UILabel!
+    @IBOutlet weak var questionTrueFalseColorTwo: UILabel!
+    @IBOutlet weak var questionTrueFalseColorThree: UILabel!
+    @IBOutlet weak var questionTrueFalseColorFour: UILabel!
+    @IBOutlet weak var questionTrueFalseColorFive: UILabel!
+    @IBOutlet weak var questionTrueFalseColorSix: UILabel!
+    @IBOutlet weak var questionTrueFalseColorSeven: UILabel!
+    @IBOutlet weak var questionTrueFalseColorEight: UILabel!
+    @IBOutlet weak var questionTrueFalseColorNine: UILabel!
+    @IBOutlet weak var questionTrueFalseColorTen: UILabel!
     
-    @IBAction func btnStart(_ sender: UIButton) {
-        
-    }
+    
     
     @IBAction func btnAnswer1(_ sender: UIButton) {
         if self.choiceOne == true {
             self.totalPoint += 10
+            self.btnAnswer1.backgroundColor = UIColor.green
+        }else if self.choiceTwo == true {
+            self.btnAnswer1.backgroundColor = UIColor.red
+            self.btnAnswer2.backgroundColor = UIColor.green
+        }else if self.choiceThree == true {
+            self.btnAnswer1.backgroundColor = UIColor.red
+            self.btnAnswer3.backgroundColor = UIColor.green
+        }else if self.choiceFour == true {
+            self.btnAnswer1.backgroundColor = UIColor.red
+            self.btnAnswer4.backgroundColor = UIColor.green
         }
         
         if (self.i < questString.count ) {
-            changerForChoicesAndQuestion()
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                self.changerForChoicesAndQuestion()
+            })
         }else if(self.i == questString.count ){
             self.lblResult.text = "Your Total Point is: \(self.totalPoint)"
             viewResult.alpha = 1
@@ -66,10 +87,22 @@ class ViewController: UIViewController {
     @IBAction func btnAnswer2(_ sender: UIButton) {
         if self.choiceTwo == true {
             self.totalPoint += 10
+            self.btnAnswer2.backgroundColor = UIColor.green
+        }else if self.choiceOne == true {
+            self.btnAnswer2.backgroundColor = UIColor.red
+            self.btnAnswer1.backgroundColor = UIColor.green
+        }else if self.choiceThree == true {
+            self.btnAnswer2.backgroundColor = UIColor.red
+            self.btnAnswer3.backgroundColor = UIColor.green
+        }else if self.choiceFour == true {
+            self.btnAnswer2.backgroundColor = UIColor.red
+            self.btnAnswer4.backgroundColor = UIColor.green
         }
         
         if (self.i < questString.count ) {
-            changerForChoicesAndQuestion()
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                self.changerForChoicesAndQuestion()
+            })
         }else if(self.i == questString.count ){
             self.lblResult.text = "Total Point is: \(totalPoint)"
             viewResult.alpha = 1
@@ -79,10 +112,22 @@ class ViewController: UIViewController {
     @IBAction func btnAnswer3(_ sender: UIButton) {
         if self.choiceThree == true {
             self.totalPoint += 10
+            self.btnAnswer3.backgroundColor = UIColor.green
+        }else if self.choiceOne == true {
+            self.btnAnswer3.backgroundColor = UIColor.red
+            self.btnAnswer1.backgroundColor = UIColor.green
+        }else if self.choiceTwo == true {
+            self.btnAnswer3.backgroundColor = UIColor.red
+            self.btnAnswer2.backgroundColor = UIColor.green
+        }else if self.choiceFour == true {
+            self.btnAnswer3.backgroundColor = UIColor.red
+            self.btnAnswer4.backgroundColor = UIColor.green
         }
         
         if (self.i < questString.count ) {
-            changerForChoicesAndQuestion()
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                self.changerForChoicesAndQuestion()
+            })
         }else if(self.i == questString.count ){
             self.lblResult.text = "Total Point is: \(totalPoint)"
             viewResult.alpha = 1
@@ -92,19 +137,37 @@ class ViewController: UIViewController {
     @IBAction func btnAnswer4(_ sender: UIButton) {
         if self.choiceFour == true {
             self.totalPoint += 10
+            self.btnAnswer4.backgroundColor = UIColor.green
+        }else if self.choiceOne == true {
+            self.btnAnswer4.backgroundColor = UIColor.red
+            self.btnAnswer1.backgroundColor = UIColor.green
+        }else if self.choiceTwo == true {
+            self.btnAnswer4.backgroundColor = UIColor.red
+            self.btnAnswer2.backgroundColor = UIColor.green
+        }else if self.choiceThree == true {
+            self.btnAnswer4.backgroundColor = UIColor.red
+            self.btnAnswer3.backgroundColor = UIColor.green
         }
         
+        
         if (self.i < questString.count) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                self.changerForChoicesAndQuestion()
+            })
             
-            changerForChoicesAndQuestion()
         }else if(self.i == questString.count ){
-            self.lblResult.text = "Total Point is: \(totalPoint)"
+            self.lblResult.text = "\(userName) Total Point is: \(totalPoint)"
             viewResult.alpha = 1
         }
         
     }
     
     func changerForChoicesAndQuestion() {
+        self.btnAnswer1.backgroundColor = UIColor.lightGray
+        self.btnAnswer2.backgroundColor = UIColor.lightGray
+        self.btnAnswer3.backgroundColor = UIColor.lightGray
+        self.btnAnswer4.backgroundColor = UIColor.lightGray
+
         self.lblQuestion.text = self.questString[self.i]
         self.i += 1
         self.lblQuestionNum.text = "Question: \(i)"
@@ -128,7 +191,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         getJSONData(url: baseUrl)
-        
+        lblResult.text = userName
         
     }
     
@@ -163,6 +226,12 @@ class ViewController: UIViewController {
                 
                 
                 if (self.i < 10) {
+                    self.btnAnswer1.backgroundColor = UIColor.lightGray
+                    self.btnAnswer2.backgroundColor = UIColor.lightGray
+                    self.btnAnswer3.backgroundColor = UIColor.lightGray
+                    self.btnAnswer4.backgroundColor = UIColor.lightGray
+
+                    self.userName = self.lblResult.text!
                     self.lblQuestion.text = self.questString[self.i]
                     self.btnAnswer1.setTitle(self.onlyAnswer[self.choiceNumOne][self.choiceNumTwo],for: .normal)
                     self.choiceOne = self.onlyBool[self.choiceNumOne][self.choiceNumTwo]

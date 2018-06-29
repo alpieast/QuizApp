@@ -6,93 +6,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AlomaFire/ViewController.swift"
-            timestampString = "551790140.508464"
+            timestampString = "551902347.428103"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "ViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AlomaFire.ViewController.questAnswerString.getter : Swift.Array&lt;(Swift.String, Swift.String, Swift.Array&lt;Swift.String&gt;, Swift.Array&lt;Swift.Bool&gt;)&gt;"
-                  moduleName = "AlomaFire"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alpieast/Desktop/AlomaFire/AlomaFire/ViewController.swift"
-                  timestampString = "551782173.800961"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "109">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AlomaFire.ViewController.questAnswerString.setter : Swift.Array&lt;(Swift.String, Swift.String, Swift.Array&lt;Swift.String&gt;, Swift.Array&lt;Swift.Bool&gt;)&gt;"
-                  moduleName = "AlomaFire"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alpieast/Desktop/AlomaFire/AlomaFire/ViewController.swift"
-                  timestampString = "551782173.803368"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "112">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AlomaFire.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; AlomaFire.ViewController"
-                  moduleName = "AlomaFire"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alpieast/Desktop/AlomaFire/AlomaFire/ViewController.swift"
-                  timestampString = "551782173.809862"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "1034">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AlomaFire.ViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;AlomaFire.ViewController&gt;"
-                  moduleName = "AlomaFire"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alpieast/Desktop/AlomaFire/AlomaFire/ViewController.swift"
-                  timestampString = "551782173.823105"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "1004">
-               </Location>
-            </Locations>
+            startingLineNumber = "206"
+            endingLineNumber = "206">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AlomaFire/ViewController.swift"
-            timestampString = "551790140.509099"
+            filePath = "AlomaFire/quizViewController.swift"
+            timestampString = "551971323.872647"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205">
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AlomaFire/quizViewController.swift"
+            timestampString = "551971323.873154"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "btnAnswer1(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
