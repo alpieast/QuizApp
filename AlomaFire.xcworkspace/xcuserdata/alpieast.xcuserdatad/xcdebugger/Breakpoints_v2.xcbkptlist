@@ -24,28 +24,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AlomaFire/quizViewController.swift"
-            timestampString = "551971323.872647"
+            timestampString = "552572437.290169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "ViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AlomaFire/quizViewController.swift"
-            timestampString = "551971323.873154"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "btnAnswer1(_:)"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "btnAnswer2(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
