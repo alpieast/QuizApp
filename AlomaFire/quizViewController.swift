@@ -72,9 +72,11 @@ class ViewController: UIViewController,UITextFieldDelegate  {
                 self.changerForChoicesAndQuestion()
             })
         }else if(self.i == questString.count ){
-            self.lblResult.text = "Your Total Point is: \(self.totalPoint)"
-            viewResult.alpha = 1
-        }
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                self.viewResult.alpha = 1
+            })
+            self.lblResult.text = "\(userName) Total Point is: \(totalPoint)"
+            }
     }
     @IBAction func btnAnswer2(_ sender: UIButton) {
         btnEnableFalse()
@@ -96,8 +98,10 @@ class ViewController: UIViewController,UITextFieldDelegate  {
                 self.changerForChoicesAndQuestion()
             })
         }else if(self.i == questString.count ){
-            self.lblResult.text = "Total Point is: \(totalPoint)"
-            viewResult.alpha = 1
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                self.viewResult.alpha = 1
+            })
+            self.lblResult.text = "\(userName) Total Point is: \(totalPoint)"
         }
     }
     @IBAction func btnAnswer3(_ sender: UIButton) {
@@ -120,8 +124,10 @@ class ViewController: UIViewController,UITextFieldDelegate  {
                 self.changerForChoicesAndQuestion()
             })
         }else if(self.i == questString.count ){
-            self.lblResult.text = "Total Point is: \(totalPoint)"
-            viewResult.alpha = 1
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                self.viewResult.alpha = 1
+            })
+            self.lblResult.text = "\(userName) Total Point is: \(totalPoint)"
         }
     }
     @IBAction func btnAnswer4(_ sender: UIButton) {
@@ -142,8 +148,10 @@ class ViewController: UIViewController,UITextFieldDelegate  {
         if (self.i < questString.count) {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {self.changerForChoicesAndQuestion()})
         }else if(self.i == questString.count ){
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                self.viewResult.alpha = 1
+            })
             self.lblResult.text = "\(userName) Total Point is: \(totalPoint)"
-            viewResult.alpha = 1
         }
         
     }
@@ -206,8 +214,10 @@ class ViewController: UIViewController,UITextFieldDelegate  {
             if (self.i < questString.count) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {self.changerForChoicesAndQuestion()})
             }else if(self.i == questString.count ){
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                    self.viewResult.alpha = 1
+                })
                 self.lblResult.text = "\(userName) Total Point is: \(totalPoint)"
-                viewResult.alpha = 1
             }
             
         }
