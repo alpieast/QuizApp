@@ -279,13 +279,30 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eqa-TU-Sl9">
+                                        <rect key="frame" x="50" y="537" width="275" height="70"/>
+                                        <color key="backgroundColor" red="0.31109455711540157" green="0.80199318398909525" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="HTc-1v-Hdl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="37"/>
+                                        <state key="normal" title="Play Again!">
+                                            <color key="titleColor" red="0.98517578029999997" green="1" blue="0.98166478040000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="x6m-Tu-F46" kind="show" id="2M1-IJ-5EE"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99108328354052544" green="1" blue="0.76480277673014652" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="djC-TT-eP4" firstAttribute="leading" secondItem="lSX-ss-tS1" secondAttribute="leading" constant="35" id="7bV-6U-1iF"/>
+                                    <constraint firstAttribute="trailing" secondItem="Eqa-TU-Sl9" secondAttribute="trailing" constant="50" id="96m-Hd-IGb"/>
                                     <constraint firstAttribute="trailing" secondItem="djC-TT-eP4" secondAttribute="trailing" constant="35" id="Wqi-pf-lgo"/>
                                     <constraint firstAttribute="bottom" secondItem="djC-TT-eP4" secondAttribute="bottom" constant="170" id="cqk-o1-E5y"/>
+                                    <constraint firstItem="Eqa-TU-Sl9" firstAttribute="leading" secondItem="lSX-ss-tS1" secondAttribute="leading" constant="50" id="fy1-hL-gOf"/>
                                     <constraint firstItem="DII-Pv-qvk" firstAttribute="leading" secondItem="lSX-ss-tS1" secondAttribute="leading" constant="10" id="lAV-wU-pIz"/>
+                                    <constraint firstItem="Eqa-TU-Sl9" firstAttribute="top" secondItem="djC-TT-eP4" secondAttribute="bottom" constant="40" id="txE-Xp-l2P"/>
                                     <constraint firstAttribute="trailing" secondItem="DII-Pv-qvk" secondAttribute="trailing" constant="10" id="y1s-x1-ZoS"/>
                                 </constraints>
                             </view>
@@ -342,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="301.60000000000002" y="87.706146926536732"/>
+            <point key="canvasLocation" x="465" y="88"/>
         </scene>
     </scenes>
 </document>
