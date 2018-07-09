@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AlomaFire/quizViewController.swift"
-            timestampString = "552779427.803795"
+            timestampString = "552853051.198091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "btnAnswer2(_:)"
             landmarkType = "7">
          </BreakpointContent>

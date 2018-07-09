@@ -36,6 +36,7 @@ class ViewController: UIViewController,UITextFieldDelegate  {
     @IBOutlet weak var lblTotalPt: UILabel!
     @IBOutlet weak var viewResult: UIView!
     @IBOutlet weak var lblResult: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var btnAnswer1: UIButton!
     @IBOutlet weak var btnAnswer2: UIButton!
     @IBOutlet weak var btnAnswer3: UIButton!
@@ -75,7 +76,8 @@ class ViewController: UIViewController,UITextFieldDelegate  {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                 self.viewResult.alpha = 1
             })
-            self.lblResult.text = "\(userName) Total Point is: \(totalPoint)"
+            self.lblResult.text = "Total Point is: \(totalPoint)"
+            self.nameLabel.text = "Congratulations \(userName)"
             }
     }
     @IBAction func btnAnswer2(_ sender: UIButton) {
@@ -101,7 +103,8 @@ class ViewController: UIViewController,UITextFieldDelegate  {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                 self.viewResult.alpha = 1
             })
-            self.lblResult.text = "\(userName) Total Point is: \(totalPoint)"
+            self.lblResult.text = "Total Point is: \(totalPoint)"
+            self.nameLabel.text = "Congratulations \(userName)"
         }
     }
     @IBAction func btnAnswer3(_ sender: UIButton) {
@@ -127,7 +130,8 @@ class ViewController: UIViewController,UITextFieldDelegate  {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                 self.viewResult.alpha = 1
             })
-            self.lblResult.text = "\(userName) Total Point is: \(totalPoint)"
+            self.lblResult.text = "Total Point is: \(totalPoint)"
+            self.nameLabel.text = "Congratulations \(userName)"
         }
     }
     @IBAction func btnAnswer4(_ sender: UIButton) {
@@ -151,7 +155,8 @@ class ViewController: UIViewController,UITextFieldDelegate  {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                 self.viewResult.alpha = 1
             })
-            self.lblResult.text = "\(userName) Total Point is: \(totalPoint)"
+            self.lblResult.text = "Total Point is: \(totalPoint)"
+            self.nameLabel.text = "Congratulations \(userName)"
         }
         
     }
@@ -217,7 +222,8 @@ class ViewController: UIViewController,UITextFieldDelegate  {
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                     self.viewResult.alpha = 1
                 })
-                self.lblResult.text = "\(userName) Total Point is: \(totalPoint)"
+                self.lblResult.text = "Total Point is: \(totalPoint)"
+                self.nameLabel.text = "Congratulations \(userName)"
             }
             
         }
