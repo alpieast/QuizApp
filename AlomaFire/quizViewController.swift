@@ -76,26 +76,89 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
     @IBOutlet weak var btnAnswer4: UIButton!
     @IBOutlet weak var answerCollection: UICollectionView!
     
+    func answerChecker() {
+        if btnAnswer1.isTouchInside {
+            print("buton 1e basıldı")
+            if self.choiceOne{
+                self.totalPoint += 10
+                self.btnAnswer1.backgroundColor = UIColor.green
+                self.resultTrueFalse.append("true")
+            } else {
+                self.btnAnswer1.backgroundColor = UIColor.red
+                self.resultTrueFalse.append("false")
+            }
+            if self.choiceTwo{
+                self.btnAnswer2.backgroundColor = UIColor.green
+            }
+            if self.choiceThree{
+                self.btnAnswer3.backgroundColor = UIColor.green
+            }
+            if self.choiceFour{
+                self.btnAnswer4.backgroundColor = UIColor.green
+            }
+        }
+        if btnAnswer2.isTouchInside {
+            print("buton 2ye basıldı")
+            if self.choiceTwo{
+                self.totalPoint += 10
+                self.btnAnswer2.backgroundColor = UIColor.green
+                self.resultTrueFalse.append("true")
+            } else {
+                self.btnAnswer2.backgroundColor = UIColor.red
+                self.resultTrueFalse.append("false")
+            }
+            if self.choiceOne{
+                self.btnAnswer1.backgroundColor = UIColor.green
+            }
+            if self.choiceThree{
+                self.btnAnswer3.backgroundColor = UIColor.green
+            }
+            if self.choiceFour{
+                self.btnAnswer4.backgroundColor = UIColor.green
+            }
+        }
+        if btnAnswer3.isTouchInside {
+            print("buton 1e basıldı")
+            if self.choiceThree{
+                self.totalPoint += 10
+                self.btnAnswer3.backgroundColor = UIColor.green
+                self.resultTrueFalse.append("true")
+            } else {
+                self.btnAnswer3.backgroundColor = UIColor.red
+                self.resultTrueFalse.append("false")
+            }
+            if self.choiceOne{
+                self.btnAnswer1.backgroundColor = UIColor.green
+            } else if self.choiceTwo{
+                self.btnAnswer2.backgroundColor = UIColor.green
+            } else if self.choiceFour{
+                self.btnAnswer4.backgroundColor = UIColor.green
+            }
+        }
+        if btnAnswer4.isTouchInside {
+            print("buton 1e basıldı")
+            if self.choiceFour{
+                self.totalPoint += 10
+                self.btnAnswer4.backgroundColor = UIColor.green
+                self.resultTrueFalse.append("true")
+            } else {
+                self.btnAnswer4.backgroundColor = UIColor.red
+                self.resultTrueFalse.append("false")
+            }
+            if self.choiceOne{
+                self.btnAnswer1.backgroundColor = UIColor.green
+            } else if self.choiceTwo{
+                self.btnAnswer2.backgroundColor = UIColor.green
+            } else if self.choiceThree{
+                self.btnAnswer3.backgroundColor = UIColor.green
+            }
+        }
+    }
     
     @IBAction func btnAnswer1(_ sender: UIButton) {
         btnEnableFalse()
-        if self.choiceOne == true {
-            self.totalPoint += 10
-            self.btnAnswer1.backgroundColor = UIColor.green
-            self.resultTrueFalse.append("true")
-        }else if self.choiceTwo == true {
-            self.btnAnswer1.backgroundColor = UIColor.red
-            self.btnAnswer2.backgroundColor = UIColor.green
-            self.resultTrueFalse.append("false")
-        }else if self.choiceThree == true {
-            self.btnAnswer1.backgroundColor = UIColor.red
-            self.btnAnswer3.backgroundColor = UIColor.green
-            self.resultTrueFalse.append("false")
-        }else if self.choiceFour == true {
-            self.btnAnswer1.backgroundColor = UIColor.red
-            self.btnAnswer4.backgroundColor = UIColor.green
-            self.resultTrueFalse.append("false")
-        }
+        answerChecker()
+        
         if (self.i < questString.count ) {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                 self.changerForChoicesAndQuestion()
@@ -112,23 +175,7 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
     }
     @IBAction func btnAnswer2(_ sender: UIButton) {
         btnEnableFalse()
-        if self.choiceTwo == true {
-            self.totalPoint += 10
-            self.btnAnswer2.backgroundColor = UIColor.green
-            self.resultTrueFalse.append("true")
-        }else if self.choiceOne == true {
-            self.btnAnswer2.backgroundColor = UIColor.red
-            self.btnAnswer1.backgroundColor = UIColor.green
-            self.resultTrueFalse.append("false")
-        }else if self.choiceThree == true {
-            self.btnAnswer2.backgroundColor = UIColor.red
-            self.btnAnswer3.backgroundColor = UIColor.green
-            self.resultTrueFalse.append("false")
-        }else if self.choiceFour == true {
-            self.btnAnswer2.backgroundColor = UIColor.red
-            self.btnAnswer4.backgroundColor = UIColor.green
-            self.resultTrueFalse.append("false")
-        }
+        answerChecker()
         if (self.i < questString.count ) {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                 self.changerForChoicesAndQuestion()
@@ -145,23 +192,7 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
     }
     @IBAction func btnAnswer3(_ sender: UIButton) {
         btnEnableFalse()
-        if self.choiceThree == true {
-            self.totalPoint += 10
-            self.btnAnswer3.backgroundColor = UIColor.green
-            self.resultTrueFalse.append("true")
-        }else if self.choiceOne == true {
-            self.btnAnswer3.backgroundColor = UIColor.red
-            self.btnAnswer1.backgroundColor = UIColor.green
-            self.resultTrueFalse.append("false")
-        }else if self.choiceTwo == true {
-            self.btnAnswer3.backgroundColor = UIColor.red
-            self.btnAnswer2.backgroundColor = UIColor.green
-            self.resultTrueFalse.append("false")
-        }else if self.choiceFour == true {
-            self.btnAnswer3.backgroundColor = UIColor.red
-            self.btnAnswer4.backgroundColor = UIColor.green
-            self.resultTrueFalse.append("false")
-        }
+        answerChecker()
         if (self.i < questString.count ) {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                 self.changerForChoicesAndQuestion()
@@ -178,23 +209,7 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
     }
     @IBAction func btnAnswer4(_ sender: UIButton) {
         btnEnableFalse()
-        if self.choiceFour == true {
-            self.totalPoint += 10
-            self.btnAnswer4.backgroundColor = UIColor.green
-            self.resultTrueFalse.append("true")
-        }else if self.choiceOne == true {
-            self.btnAnswer4.backgroundColor = UIColor.red
-            self.btnAnswer1.backgroundColor = UIColor.green
-            self.resultTrueFalse.append("false")
-        }else if self.choiceTwo == true {
-            self.btnAnswer4.backgroundColor = UIColor.red
-            self.btnAnswer2.backgroundColor = UIColor.green
-            self.resultTrueFalse.append("false")
-        }else if self.choiceThree == true {
-            self.btnAnswer4.backgroundColor = UIColor.red
-            self.btnAnswer3.backgroundColor = UIColor.green
-            self.resultTrueFalse.append("false")
-        }
+        answerChecker()
         if (self.i < questString.count) {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {self.changerForChoicesAndQuestion()})
         }else if(self.i == questString.count ){
