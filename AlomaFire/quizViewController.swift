@@ -24,15 +24,15 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
         print(indexPath.section, indexPath.row)
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "answerCollectionCell", for: indexPath)
-        if (self.resultTrueFalse[self.resultBoolCount] == true) {
+        if (self.resultTrueFalse[self.resultBoolCount] == "true") {
             cell.backgroundColor = UIColor.green
             self.resultBoolCount += 1
-        }else if(self.resultTrueFalse[self.resultBoolCount] == false){
+        }else if(self.resultTrueFalse[self.resultBoolCount] == "false"){
             
             cell.backgroundColor = UIColor.red
             self.resultBoolCount += 1
         }else {
-            cell.backgroundColor = UIColor.black
+            cell.backgroundColor = UIColor.gray
             self.resultBoolCount += 1
         }
         return cell
@@ -57,8 +57,12 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
     var totalPoint = 0
     var choiceStatue: Bool = false
     var timerValue: Float = 0.0
-    var resultTrueFalse: [Bool] = []
+    var resultTrueFalse: [String] = []
     var resultBoolCount = 0
+    var timerStop: Bool = false
+    
+    var alpiTimer: Timer!
+    
     @IBOutlet weak var timerView: UIProgressView!
     @IBOutlet weak var lblQuestion: UILabel!
     @IBOutlet weak var lblQuestionNum: UILabel!
@@ -78,19 +82,19 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
         if self.choiceOne == true {
             self.totalPoint += 10
             self.btnAnswer1.backgroundColor = UIColor.green
-            self.resultTrueFalse.append(true)
+            self.resultTrueFalse.append("true")
         }else if self.choiceTwo == true {
             self.btnAnswer1.backgroundColor = UIColor.red
             self.btnAnswer2.backgroundColor = UIColor.green
-            self.resultTrueFalse.append(false)
+            self.resultTrueFalse.append("false")
         }else if self.choiceThree == true {
             self.btnAnswer1.backgroundColor = UIColor.red
             self.btnAnswer3.backgroundColor = UIColor.green
-            self.resultTrueFalse.append(false)
+            self.resultTrueFalse.append("false")
         }else if self.choiceFour == true {
             self.btnAnswer1.backgroundColor = UIColor.red
             self.btnAnswer4.backgroundColor = UIColor.green
-            self.resultTrueFalse.append(false)
+            self.resultTrueFalse.append("false")
         }
         if (self.i < questString.count ) {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
@@ -100,6 +104,7 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                 self.answerCollection.reloadData()
                 self.viewResult.alpha = 1
+                self.timerStop = true
             })
             self.lblResult.text = "Total Point is: \(totalPoint)"
             self.nameLabel.text = "Congratulations \(userName)"
@@ -110,19 +115,19 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
         if self.choiceTwo == true {
             self.totalPoint += 10
             self.btnAnswer2.backgroundColor = UIColor.green
-            self.resultTrueFalse.append(true)
+            self.resultTrueFalse.append("true")
         }else if self.choiceOne == true {
             self.btnAnswer2.backgroundColor = UIColor.red
             self.btnAnswer1.backgroundColor = UIColor.green
-            self.resultTrueFalse.append(false)
+            self.resultTrueFalse.append("false")
         }else if self.choiceThree == true {
             self.btnAnswer2.backgroundColor = UIColor.red
             self.btnAnswer3.backgroundColor = UIColor.green
-            self.resultTrueFalse.append(false)
+            self.resultTrueFalse.append("false")
         }else if self.choiceFour == true {
             self.btnAnswer2.backgroundColor = UIColor.red
             self.btnAnswer4.backgroundColor = UIColor.green
-            self.resultTrueFalse.append(false)
+            self.resultTrueFalse.append("false")
         }
         if (self.i < questString.count ) {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
@@ -132,6 +137,7 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                 self.answerCollection.reloadData()
                 self.viewResult.alpha = 1
+                self.timerStop = true
             })
             self.lblResult.text = "Total Point is: \(totalPoint)"
             self.nameLabel.text = "Congratulations \(userName)"
@@ -142,19 +148,19 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
         if self.choiceThree == true {
             self.totalPoint += 10
             self.btnAnswer3.backgroundColor = UIColor.green
-            self.resultTrueFalse.append(true)
+            self.resultTrueFalse.append("true")
         }else if self.choiceOne == true {
             self.btnAnswer3.backgroundColor = UIColor.red
             self.btnAnswer1.backgroundColor = UIColor.green
-            self.resultTrueFalse.append(false)
+            self.resultTrueFalse.append("false")
         }else if self.choiceTwo == true {
             self.btnAnswer3.backgroundColor = UIColor.red
             self.btnAnswer2.backgroundColor = UIColor.green
-            self.resultTrueFalse.append(false)
+            self.resultTrueFalse.append("false")
         }else if self.choiceFour == true {
             self.btnAnswer3.backgroundColor = UIColor.red
             self.btnAnswer4.backgroundColor = UIColor.green
-            self.resultTrueFalse.append(false)
+            self.resultTrueFalse.append("false")
         }
         if (self.i < questString.count ) {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
@@ -164,6 +170,7 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                 self.answerCollection.reloadData()
                 self.viewResult.alpha = 1
+                self.timerStop = true
             })
             self.lblResult.text = "Total Point is: \(totalPoint)"
             self.nameLabel.text = "Congratulations \(userName)"
@@ -174,19 +181,19 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
         if self.choiceFour == true {
             self.totalPoint += 10
             self.btnAnswer4.backgroundColor = UIColor.green
-            self.resultTrueFalse.append(true)
+            self.resultTrueFalse.append("true")
         }else if self.choiceOne == true {
             self.btnAnswer4.backgroundColor = UIColor.red
             self.btnAnswer1.backgroundColor = UIColor.green
-            self.resultTrueFalse.append(false)
+            self.resultTrueFalse.append("false")
         }else if self.choiceTwo == true {
             self.btnAnswer4.backgroundColor = UIColor.red
             self.btnAnswer2.backgroundColor = UIColor.green
-            self.resultTrueFalse.append(false)
+            self.resultTrueFalse.append("false")
         }else if self.choiceThree == true {
             self.btnAnswer4.backgroundColor = UIColor.red
             self.btnAnswer3.backgroundColor = UIColor.green
-            self.resultTrueFalse.append(false)
+            self.resultTrueFalse.append("false")
         }
         if (self.i < questString.count) {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {self.changerForChoicesAndQuestion()})
@@ -194,6 +201,7 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                 self.viewResult.alpha = 1
                 self.answerCollection.reloadData()
+                self.alpiTimer.invalidate()
                 
             })
             self.lblResult.text = "Total Point is: \(totalPoint)"
@@ -201,7 +209,6 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
         }
         
     }
-    
     func btnEnableFalse(){
         self.btnAnswer1.isEnabled = false
         self.btnAnswer2.isEnabled = false
@@ -239,8 +246,11 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
         }
     
     @objc func updateProgress(){
+        if (self.timerStop == false){
         timerValue += 0.001
         timerView.progress = timerValue
+        }
+        
         if  timerValue >= 1 {
             timerValue = 0
             print(timerValue)
@@ -255,18 +265,25 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
             }
             if (self.i < questString.count) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
-                    
+                    self.resultTrueFalse.append("notAnswered")
                     self.changerForChoicesAndQuestion()})
             }else if(self.i == questString.count ){
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                    self.resultTrueFalse.append("notAnswered")
+                    self.answerCollection.reloadData()
                     self.viewResult.alpha = 1
+                    self.timerStop = true
                 })
                 self.lblResult.text = "Total Point is: \(totalPoint)"
                 self.nameLabel.text = "Congratulations \(userName)"
             }
             
         }
+        //
         }
+    func timerStopper(){
+        
+    }
     
     
     override func viewDidLoad() {
@@ -275,10 +292,11 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
         lblResult.text = userName
         answerCollection.delegate = self
         answerCollection.dataSource = self
-        Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
+        self.alpiTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
+        
         }
     func getJSONData(url: String) {
-        
+
         Alamofire.request(url, method: .get).responseJSON { response in
             if response.result.isSuccess {
                 let jsonData : JSON = JSON(response.result.value!)
