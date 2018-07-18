@@ -12,7 +12,7 @@ import UIKit
 class startViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var userView : ViewController = segue.destination as! ViewController
+        let userView : ViewController = segue.destination as! ViewController
         
         userView.userName = userNameField.text!
 
