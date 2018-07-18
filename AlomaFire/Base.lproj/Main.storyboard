@@ -169,17 +169,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djC-TT-eP4">
-                                        <rect key="frame" x="35" y="417" width="305" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="UFB-rK-1HE"/>
-                                        </constraints>
+                                        <rect key="frame" x="35" y="431" width="305" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="textColor" red="0.44326956001858631" green="0.51605596123515585" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DII-Pv-qvk">
-                                        <rect key="frame" x="10" y="114" width="355" height="110"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DII-Pv-qvk">
+                                        <rect key="frame" x="30" y="114" width="315" height="110"/>
+                                        <color key="backgroundColor" red="0.99215686274509807" green="1" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="110" id="V9A-tl-Mj7"/>
+                                        </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KaV-Tl-70j">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -187,7 +187,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bWI-Uh-EPg">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="answerCollectionCell" id="bWI-Uh-EPg">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -195,87 +195,6 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </view>
                                                 <color key="backgroundColor" red="1" green="0.24280335093830496" blue="0.30618808460432623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ico-Lx-IAt">
-                                                <rect key="frame" x="61" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </view>
-                                                <color key="backgroundColor" red="1" green="0.24280335089999999" blue="0.30618808460000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Cdz-GN-osv">
-                                                <rect key="frame" x="122" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </view>
-                                                <color key="backgroundColor" red="1" green="0.24280335089999999" blue="0.30618808460000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="I30-Rs-Vsd">
-                                                <rect key="frame" x="183" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </view>
-                                                <color key="backgroundColor" red="1" green="0.24280335089999999" blue="0.30618808460000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dyr-cw-FbY">
-                                                <rect key="frame" x="244" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </view>
-                                                <color key="backgroundColor" red="1" green="0.24280335089999999" blue="0.30618808460000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="DyF-8c-Ovf">
-                                                <rect key="frame" x="305" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </view>
-                                                <color key="backgroundColor" red="1" green="0.24280335089999999" blue="0.30618808460000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lBS-Ho-Hea">
-                                                <rect key="frame" x="0.0" y="60" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </view>
-                                                <color key="backgroundColor" red="1" green="0.24280335089999999" blue="0.30618808460000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KEC-bd-Z5V">
-                                                <rect key="frame" x="61" y="60" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </view>
-                                                <color key="backgroundColor" red="1" green="0.24280335089999999" blue="0.30618808460000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="txz-TD-rQw">
-                                                <rect key="frame" x="122" y="60" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </view>
-                                                <color key="backgroundColor" red="1" green="0.24280335089999999" blue="0.30618808460000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0Fz-H9-WkL">
-                                                <rect key="frame" x="183" y="60" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </view>
-                                                <color key="backgroundColor" red="1" green="0.24280335089999999" blue="0.30618808460000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -298,24 +217,25 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="R2X-kQ-wmd"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" red="0.44326956000000001" green="0.51605596119999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.99108328354052544" green="1" blue="0.76480277673014652" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.99215686274509807" green="1" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="djC-TT-eP4" firstAttribute="leading" secondItem="lSX-ss-tS1" secondAttribute="leading" constant="35" id="7bV-6U-1iF"/>
                                     <constraint firstAttribute="trailing" secondItem="Eqa-TU-Sl9" secondAttribute="trailing" constant="50" id="96m-Hd-IGb"/>
+                                    <constraint firstItem="DII-Pv-qvk" firstAttribute="top" secondItem="lSX-ss-tS1" secondAttribute="top" constant="114" id="HIm-DO-8yc"/>
                                     <constraint firstAttribute="trailing" secondItem="Tkg-Vm-6jH" secondAttribute="trailing" constant="35" id="N0b-nW-ZYK"/>
                                     <constraint firstItem="Tkg-Vm-6jH" firstAttribute="leading" secondItem="lSX-ss-tS1" secondAttribute="leading" constant="35" id="NVZ-5E-xer"/>
                                     <constraint firstAttribute="trailing" secondItem="djC-TT-eP4" secondAttribute="trailing" constant="35" id="Wqi-pf-lgo"/>
                                     <constraint firstAttribute="bottom" secondItem="djC-TT-eP4" secondAttribute="bottom" constant="200" id="cqk-o1-E5y"/>
                                     <constraint firstItem="Eqa-TU-Sl9" firstAttribute="leading" secondItem="lSX-ss-tS1" secondAttribute="leading" constant="50" id="fy1-hL-gOf"/>
-                                    <constraint firstItem="DII-Pv-qvk" firstAttribute="leading" secondItem="lSX-ss-tS1" secondAttribute="leading" constant="10" id="lAV-wU-pIz"/>
+                                    <constraint firstItem="DII-Pv-qvk" firstAttribute="leading" secondItem="lSX-ss-tS1" secondAttribute="leading" constant="30" id="lAV-wU-pIz"/>
                                     <constraint firstItem="Eqa-TU-Sl9" firstAttribute="top" secondItem="Tkg-Vm-6jH" secondAttribute="bottom" constant="20" id="sON-eF-n8a"/>
                                     <constraint firstItem="Eqa-TU-Sl9" firstAttribute="top" secondItem="djC-TT-eP4" secondAttribute="bottom" constant="70" id="txE-Xp-l2P"/>
-                                    <constraint firstAttribute="trailing" secondItem="DII-Pv-qvk" secondAttribute="trailing" constant="10" id="y1s-x1-ZoS"/>
+                                    <constraint firstAttribute="trailing" secondItem="DII-Pv-qvk" secondAttribute="trailing" constant="30" id="y1s-x1-ZoS"/>
                                 </constraints>
                             </view>
                         </subviews>

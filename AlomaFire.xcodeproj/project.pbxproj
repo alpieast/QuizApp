@@ -13,6 +13,7 @@
 		05377F3220DD270D007DE077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05377F3120DD270D007DE077 /* Assets.xcassets */; };
 		05377F3520DD270D007DE077 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05377F3320DD270D007DE077 /* LaunchScreen.storyboard */; };
 		05CCBE3520E62E0300F4E3D6 /* startViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CCBE3420E62E0300F4E3D6 /* startViewController.swift */; };
+		05D9B2B020F9686A00B80E98 /* QuestionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D9B2AF20F9686A00B80E98 /* QuestionCollectionView.swift */; };
 		90236B32A07EECF9BA97F33B /* Pods_AlomaFire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586650ED05AB522B5761F34D /* Pods_AlomaFire.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		05377F3420DD270D007DE077 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05377F3620DD270D007DE077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05CCBE3420E62E0300F4E3D6 /* startViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startViewController.swift; sourceTree = "<group>"; };
+		05D9B2AF20F9686A00B80E98 /* QuestionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCollectionView.swift; sourceTree = "<group>"; };
 		586650ED05AB522B5761F34D /* Pods_AlomaFire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlomaFire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3790A1E12FEE89A02A73B0 /* Pods-AlomaFire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlomaFire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlomaFire/Pods-AlomaFire.debug.xcconfig"; sourceTree = "<group>"; };
 		EB807C85B55E8A423BDC3F71 /* Pods-AlomaFire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlomaFire.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlomaFire/Pods-AlomaFire.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				05377F2A20DD270D007DE077 /* AppDelegate.swift */,
 				05377F2C20DD270D007DE077 /* quizViewController.swift */,
 				05CCBE3420E62E0300F4E3D6 /* startViewController.swift */,
+				05D9B2AF20F9686A00B80E98 /* QuestionCollectionView.swift */,
 				05377F2E20DD270D007DE077 /* Main.storyboard */,
 				05377F3120DD270D007DE077 /* Assets.xcassets */,
 				05377F3320DD270D007DE077 /* LaunchScreen.storyboard */,
@@ -208,6 +211,7 @@
 			files = (
 				05377F2D20DD270D007DE077 /* quizViewController.swift in Sources */,
 				05CCBE3520E62E0300F4E3D6 /* startViewController.swift in Sources */,
+				05D9B2B020F9686A00B80E98 /* QuestionCollectionView.swift in Sources */,
 				05377F2B20DD270D007DE077 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,7 +10,34 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ViewController: UIViewController,UITextFieldDelegate  {
+class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate  {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.questString.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print(indexPath.section, indexPath.row)
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "answerCollectionCell", for: indexPath)
+        if (self.resultTrueFalse[self.resultBoolCount] == true) {
+            cell.backgroundColor = UIColor.green
+            self.resultBoolCount += 1
+        }else if(self.resultTrueFalse[self.resultBoolCount] == false){
+            
+            cell.backgroundColor = UIColor.red
+            self.resultBoolCount += 1
+        }else {
+            cell.backgroundColor = UIColor.black
+            self.resultBoolCount += 1
+        }
+        return cell
+    }
+    
     
     
     let baseUrl = "https://private-anon-2a496da62c-quizmasters.apiary-mock.com/questions"
@@ -30,6 +57,8 @@ class ViewController: UIViewController,UITextFieldDelegate  {
     var totalPoint = 0
     var choiceStatue: Bool = false
     var timerValue: Float = 0.0
+    var resultTrueFalse: [Bool] = []
+    var resultBoolCount = 0
     @IBOutlet weak var timerView: UIProgressView!
     @IBOutlet weak var lblQuestion: UILabel!
     @IBOutlet weak var lblQuestionNum: UILabel!
@@ -42,31 +71,26 @@ class ViewController: UIViewController,UITextFieldDelegate  {
     @IBOutlet weak var btnAnswer3: UIButton!
     @IBOutlet weak var btnAnswer4: UIButton!
     @IBOutlet weak var answerCollection: UICollectionView!
-    @IBOutlet weak var questionTrueFalseColorOne: UILabel!
-    @IBOutlet weak var questionTrueFalseColorTwo: UILabel!
-    @IBOutlet weak var questionTrueFalseColorThree: UILabel!
-    @IBOutlet weak var questionTrueFalseColorFour: UILabel!
-    @IBOutlet weak var questionTrueFalseColorFive: UILabel!
-    @IBOutlet weak var questionTrueFalseColorSix: UILabel!
-    @IBOutlet weak var questionTrueFalseColorSeven: UILabel!
-    @IBOutlet weak var questionTrueFalseColorEight: UILabel!
-    @IBOutlet weak var questionTrueFalseColorNine: UILabel!
-    @IBOutlet weak var questionTrueFalseColorTen: UILabel!
+    
     
     @IBAction func btnAnswer1(_ sender: UIButton) {
         btnEnableFalse()
         if self.choiceOne == true {
             self.totalPoint += 10
             self.btnAnswer1.backgroundColor = UIColor.green
+            self.resultTrueFalse.append(true)
         }else if self.choiceTwo == true {
             self.btnAnswer1.backgroundColor = UIColor.red
             self.btnAnswer2.backgroundColor = UIColor.green
+            self.resultTrueFalse.append(false)
         }else if self.choiceThree == true {
             self.btnAnswer1.backgroundColor = UIColor.red
             self.btnAnswer3.backgroundColor = UIColor.green
+            self.resultTrueFalse.append(false)
         }else if self.choiceFour == true {
             self.btnAnswer1.backgroundColor = UIColor.red
             self.btnAnswer4.backgroundColor = UIColor.green
+            self.resultTrueFalse.append(false)
         }
         if (self.i < questString.count ) {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
@@ -74,6 +98,7 @@ class ViewController: UIViewController,UITextFieldDelegate  {
             })
         }else if(self.i == questString.count ){
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                self.answerCollection.reloadData()
                 self.viewResult.alpha = 1
             })
             self.lblResult.text = "Total Point is: \(totalPoint)"
@@ -85,15 +110,19 @@ class ViewController: UIViewController,UITextFieldDelegate  {
         if self.choiceTwo == true {
             self.totalPoint += 10
             self.btnAnswer2.backgroundColor = UIColor.green
+            self.resultTrueFalse.append(true)
         }else if self.choiceOne == true {
             self.btnAnswer2.backgroundColor = UIColor.red
             self.btnAnswer1.backgroundColor = UIColor.green
+            self.resultTrueFalse.append(false)
         }else if self.choiceThree == true {
             self.btnAnswer2.backgroundColor = UIColor.red
             self.btnAnswer3.backgroundColor = UIColor.green
+            self.resultTrueFalse.append(false)
         }else if self.choiceFour == true {
             self.btnAnswer2.backgroundColor = UIColor.red
             self.btnAnswer4.backgroundColor = UIColor.green
+            self.resultTrueFalse.append(false)
         }
         if (self.i < questString.count ) {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
@@ -101,6 +130,7 @@ class ViewController: UIViewController,UITextFieldDelegate  {
             })
         }else if(self.i == questString.count ){
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                self.answerCollection.reloadData()
                 self.viewResult.alpha = 1
             })
             self.lblResult.text = "Total Point is: \(totalPoint)"
@@ -112,15 +142,19 @@ class ViewController: UIViewController,UITextFieldDelegate  {
         if self.choiceThree == true {
             self.totalPoint += 10
             self.btnAnswer3.backgroundColor = UIColor.green
+            self.resultTrueFalse.append(true)
         }else if self.choiceOne == true {
             self.btnAnswer3.backgroundColor = UIColor.red
             self.btnAnswer1.backgroundColor = UIColor.green
+            self.resultTrueFalse.append(false)
         }else if self.choiceTwo == true {
             self.btnAnswer3.backgroundColor = UIColor.red
             self.btnAnswer2.backgroundColor = UIColor.green
+            self.resultTrueFalse.append(false)
         }else if self.choiceFour == true {
             self.btnAnswer3.backgroundColor = UIColor.red
             self.btnAnswer4.backgroundColor = UIColor.green
+            self.resultTrueFalse.append(false)
         }
         if (self.i < questString.count ) {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
@@ -128,6 +162,7 @@ class ViewController: UIViewController,UITextFieldDelegate  {
             })
         }else if(self.i == questString.count ){
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                self.answerCollection.reloadData()
                 self.viewResult.alpha = 1
             })
             self.lblResult.text = "Total Point is: \(totalPoint)"
@@ -139,21 +174,27 @@ class ViewController: UIViewController,UITextFieldDelegate  {
         if self.choiceFour == true {
             self.totalPoint += 10
             self.btnAnswer4.backgroundColor = UIColor.green
+            self.resultTrueFalse.append(true)
         }else if self.choiceOne == true {
             self.btnAnswer4.backgroundColor = UIColor.red
             self.btnAnswer1.backgroundColor = UIColor.green
+            self.resultTrueFalse.append(false)
         }else if self.choiceTwo == true {
             self.btnAnswer4.backgroundColor = UIColor.red
             self.btnAnswer2.backgroundColor = UIColor.green
+            self.resultTrueFalse.append(false)
         }else if self.choiceThree == true {
             self.btnAnswer4.backgroundColor = UIColor.red
             self.btnAnswer3.backgroundColor = UIColor.green
+            self.resultTrueFalse.append(false)
         }
         if (self.i < questString.count) {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {self.changerForChoicesAndQuestion()})
         }else if(self.i == questString.count ){
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                 self.viewResult.alpha = 1
+                self.answerCollection.reloadData()
+                
             })
             self.lblResult.text = "Total Point is: \(totalPoint)"
             self.nameLabel.text = "Congratulations \(userName)"
@@ -177,7 +218,6 @@ class ViewController: UIViewController,UITextFieldDelegate  {
         self.btnAnswer2.isEnabled = true
         self.btnAnswer3.isEnabled = true
         self.btnAnswer4.isEnabled = true
-        print(self.i)
         self.lblQuestion.text = self.questString[self.i]
         self.i += 1
         self.lblQuestionNum.text = "Question: \(i)"
@@ -198,9 +238,6 @@ class ViewController: UIViewController,UITextFieldDelegate  {
         timerValue = 0
         }
     
-    
-    
-    
     @objc func updateProgress(){
         timerValue += 0.001
         timerView.progress = timerValue
@@ -217,7 +254,9 @@ class ViewController: UIViewController,UITextFieldDelegate  {
                 self.btnAnswer4.backgroundColor = UIColor.green
             }
             if (self.i < questString.count) {
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {self.changerForChoicesAndQuestion()})
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                    
+                    self.changerForChoicesAndQuestion()})
             }else if(self.i == questString.count ){
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                     self.viewResult.alpha = 1
@@ -234,9 +273,12 @@ class ViewController: UIViewController,UITextFieldDelegate  {
         super.viewDidLoad()
         getJSONData(url: baseUrl)
         lblResult.text = userName
+        answerCollection.delegate = self
+        answerCollection.dataSource = self
         Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
         }
     func getJSONData(url: String) {
+        
         Alamofire.request(url, method: .get).responseJSON { response in
             if response.result.isSuccess {
                 let jsonData : JSON = JSON(response.result.value!)
@@ -250,7 +292,8 @@ class ViewController: UIViewController,UITextFieldDelegate  {
                     self.answerString.insert("\(json["choices"])", at: 0)
                     self.onlyAnswer.insert(json["choices"].arrayValue.map({$0["choice"].stringValue}), at: 0)
                     self.onlyBool.insert(json["choices"].arrayValue.map({$0["correct"].boolValue}), at: 0)
-                    };
+                };
+                
                 if (self.i < 10) {
                     self.btnAnswer1.backgroundColor = UIColor.lightGray
                     self.btnAnswer2.backgroundColor = UIColor.lightGray
@@ -274,7 +317,8 @@ class ViewController: UIViewController,UITextFieldDelegate  {
                     self.i = self.i+1
                     self.lblQuestionNum.text = "Question: \(self.i)"
                     self.lblTotalPt.text = "Total Point is: \(self.totalPoint)"
-                    }} else {
+                    }
+            } else {
                 print("Error: \(String(describing: response.result.error))")
             }
         }
