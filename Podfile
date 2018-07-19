@@ -9,5 +9,9 @@ target 'AlomaFire' do
 
 pod 'Alamofire'
 pod 'SwiftyJSON'
+pod 'Firebase'
+pod 'Firebase/Core'
+pod 'Firebase/Database'
+pod 'Firebase/Auth'
 
 end

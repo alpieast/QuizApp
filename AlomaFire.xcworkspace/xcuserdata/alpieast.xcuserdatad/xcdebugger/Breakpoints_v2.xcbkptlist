@@ -17,5 +17,83 @@
             endingLineNumber = "206">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AlomaFire/quizViewController.swift"
+            timestampString = "553693780.63738"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlomaFire.ViewController.onlyAnswer.getter : Swift.Array&lt;Swift.Array&lt;Swift.String&gt;&gt;"
+                  moduleName = "AlomaFire"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alpieast/Desktop/AlomaFire/AlomaFire/quizViewController.swift"
+                  timestampString = "553688141.382548"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "109">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlomaFire.ViewController.onlyAnswer.setter : Swift.Array&lt;Swift.Array&lt;Swift.String&gt;&gt;"
+                  moduleName = "AlomaFire"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alpieast/Desktop/AlomaFire/AlomaFire/quizViewController.swift"
+                  timestampString = "553688141.384671"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlomaFire.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; AlomaFire.ViewController"
+                  moduleName = "AlomaFire"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alpieast/Desktop/AlomaFire/AlomaFire/quizViewController.swift"
+                  timestampString = "553688141.386939"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "1306">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlomaFire.ViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;AlomaFire.ViewController&gt;"
+                  moduleName = "AlomaFire"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alpieast/Desktop/AlomaFire/AlomaFire/quizViewController.swift"
+                  timestampString = "553688141.389757"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "1248">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

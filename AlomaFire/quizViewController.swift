@@ -9,8 +9,13 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Firebase
+import FirebaseDatabase
 
 class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate  {
+    
+    let referanceURL:String = "https://quizapp-alpi.firebaseio.com/"
+    var ref: DatabaseReference! = Database.database().reference()
     let baseUrl = "https://private-anon-2a496da62c-quizmasters.apiary-mock.com/questions"
     var questString: [String] = []
     var answerString: [String] = []
@@ -101,10 +106,12 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
         self.lblTotalPt.text = "Total Point is: \(self.totalPoint)"
         self.timerValue = 0})
         }else if(self.i == questString.count ){
+            btnEnableFalse()
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                 self.viewResult.alpha = 1
                 self.answerCollection.reloadData()
                 self.alpiTimer.invalidate()
+                self.dataBaseBam()
             })
             self.lblResult.text = "Total Point is: \(totalPoint)"
             self.nameLabel.text = "Congratulations \(userName)"
@@ -138,6 +145,7 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
                     self.answerCollection.reloadData()
                     self.viewResult.alpha = 1
                     self.timerStop = true
+                    
                 })
                 self.lblResult.text = "Total Point is: \(totalPoint)"
                 self.nameLabel.text = "Congratulations \(userName)"
@@ -238,14 +246,11 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
         }
         return cell
     }
-    //Functions End
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        getJSONData(url: baseUrl)
-        lblResult.text = userName
-        answerCollection.delegate = self
-        answerCollection.dataSource = self
-        self.alpiTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
+    func dataBaseBam(){
+        let referanceDB = Database.database().reference(fromURL: referanceURL)
+        let value = ["totalPoint": totalPoint, "userName": userName] as [String : Any]
+        //referanceDB.updateChildValues(value)
+        referanceDB.child("userResult/").childByAutoId().setValue(value)
     }
     func getJSONData(url: String) {
         Alamofire.request(url, method: .get).responseJSON { response in
@@ -267,7 +272,19 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
                 print("Error: \(String(describing: response.result.error))")
             }
         }
-   }
+    }
+    
+    //Functions End
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        btnEnableFalse()
+        getJSONData(url: baseUrl)
+        lblResult.text = userName
+        answerCollection.delegate = self
+        answerCollection.dataSource = self
+        self.alpiTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

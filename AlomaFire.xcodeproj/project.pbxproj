@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05040C5921000A7300468019 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05040C5821000A7300468019 /* GoogleService-Info.plist */; };
 		05377F2B20DD270D007DE077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05377F2A20DD270D007DE077 /* AppDelegate.swift */; };
 		05377F2D20DD270D007DE077 /* quizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05377F2C20DD270D007DE077 /* quizViewController.swift */; };
 		05377F3020DD270D007DE077 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05377F2E20DD270D007DE077 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05040C5821000A7300468019 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		05377F2720DD270D007DE077 /* AlomaFire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlomaFire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05377F2A20DD270D007DE077 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05377F2C20DD270D007DE077 /* quizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quizViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				05377F3120DD270D007DE077 /* Assets.xcassets */,
 				05377F3320DD270D007DE077 /* LaunchScreen.storyboard */,
 				05377F3620DD270D007DE077 /* Info.plist */,
+				05040C5821000A7300468019 /* GoogleService-Info.plist */,
 			);
 			path = AlomaFire;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05377F3520DD270D007DE077 /* LaunchScreen.storyboard in Resources */,
+				05040C5921000A7300468019 /* GoogleService-Info.plist in Resources */,
 				05377F3220DD270D007DE077 /* Assets.xcassets in Resources */,
 				05377F3020DD270D007DE077 /* Main.storyboard in Resources */,
 			);
@@ -172,12 +176,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AlomaFire/Pods-AlomaFire-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

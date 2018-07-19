@@ -47,6 +47,15 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="IR5-T3-xnx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AM3-tR-KS6">
+                                <rect key="frame" x="307" y="54" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Results"/>
+                                <connections>
+                                    <action selector="resultView:" destination="Lc0-0j-NnB" eventType="touchUpInside" id="SuX-Vu-yZD"/>
+                                    <action selector="resultView:" destination="x6m-Tu-F46" eventType="touchUpInside" id="sNF-gc-pCv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -64,6 +73,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Adb-gC-mwV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Lc0-0j-NnB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-473" y="88"/>
         </scene>
@@ -166,7 +176,7 @@
                                     <action selector="btnAnswer4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yME-iZ-oOa"/>
                                 </connections>
                             </button>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSX-ss-tS1">
+                            <view alpha="0.0" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSX-ss-tS1">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djC-TT-eP4">
