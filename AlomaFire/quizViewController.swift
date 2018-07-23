@@ -11,6 +11,8 @@ import Alamofire
 import SwiftyJSON
 import Firebase
 import FirebaseDatabase
+import CoreData
+import FirebaseFirestore
 
 class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate  {
     
@@ -26,6 +28,7 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
     var choiceThree: Bool = false
     var choiceFour: Bool = false
     var userName = String()
+    
     var trueFalse: Bool = false
     var i = 0
     var choiceNumOne = 0
@@ -49,6 +52,7 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
     @IBOutlet weak var btnAnswer3: UIButton!
     @IBOutlet weak var btnAnswer4: UIButton!
     @IBOutlet weak var answerCollection: UICollectionView!
+    
     @IBAction func btnAnswer1(_ sender: UIButton) {
         btnEnableFalse()
         answerChecker()
@@ -145,6 +149,8 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
                     self.answerCollection.reloadData()
                     self.viewResult.alpha = 1
                     self.timerStop = true
+                    self.dataBaseBam()
+                    self.btnEnableFalse()
                     
                 })
                 self.lblResult.text = "Total Point is: \(totalPoint)"
@@ -248,10 +254,17 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
     }
     func dataBaseBam(){
         let referanceDB = Database.database().reference(fromURL: referanceURL)
-        let value = ["totalPoint": totalPoint, "userName": userName] as [String : Any]
-        //referanceDB.updateChildValues(value)
-        referanceDB.child("userResult/").childByAutoId().setValue(value)
-    }
+        
+        let value3 = ["userName": userName, "totalPoint":totalPoint] as [String : Any]
+        var value4 = [userName,totalPoint] as [Any]
+        
+        //referanceDB.child("results").childByAutoId().setValue(value3)
+        //ref?.child("userResults").childByAutoId().setValue(value3)
+        ref?.child("userResults").childByAutoId().setValue(userName)
+        ref?.child("userPoints").childByAutoId().setValue(totalPoint)
+        
+        
+ }
     func getJSONData(url: String) {
         Alamofire.request(url, method: .get).responseJSON { response in
             if response.result.isSuccess {
@@ -275,11 +288,13 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
     }
     
     //Functions End
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         btnEnableFalse()
         getJSONData(url: baseUrl)
-        lblResult.text = userName
+        userName = name
         answerCollection.delegate = self
         answerCollection.dataSource = self
         self.alpiTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
