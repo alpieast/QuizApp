@@ -15,24 +15,25 @@ import Firebase
 import FirebaseAuth
 
 var name:String = ""
-
+var totalPointData:[Int] = []
+var userNameData:[String] = []
 class startViewController: UIViewController {
     
     var ref: DatabaseReference?
     var databaseHandle:DatabaseHandle?
-    var userNameData = [String]()
-    var totalPointData = [Int]()
+    
+    
     var tableViewData = [[String:Int]]()
     
     
     
     
     func dataBaseBam(){
-       print(self.userNameData)
-        print(self.totalPointData)
+       print(userNameData)
+        print(totalPointData)
     }
     @IBAction func totalPoints(_ sender: Any) {
-        dataBaseBam()
+        
     }
     @IBOutlet weak var userNameField: UITextField!
     @IBAction func startButton(_ sender: Any, forEvent event: UIEvent) {
@@ -52,7 +53,7 @@ class startViewController: UIViewController {
             let namePost = snapshot.value as? String
             //take the value from snapshot and add to array
             if let actualNamePost = namePost {
-            self.userNameData.append(actualNamePost)
+            userNameData.append(actualNamePost)
             }
         })
         
@@ -60,7 +61,7 @@ class startViewController: UIViewController {
             let pointPost = snapshot.value as? Int
             //take the value from snapshot and add to array
             if let actualPointPost = pointPost{
-                self.totalPointData.append(actualPointPost)
+                totalPointData.append(actualPointPost)
             }
         })
     }
