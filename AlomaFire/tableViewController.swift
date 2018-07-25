@@ -27,7 +27,10 @@ class tableViewController: UIViewController,UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        tableView.dataSource = self
+        tableView.delegate = self
+        
+        
+        
         
         userNames = userNameData
         userPoints = totalPointData

@@ -27,6 +27,7 @@ class startViewController: UIViewController {
     
     
     
+    @IBOutlet weak var imageView: UIImageView!
     
     func dataBaseBam(){
        print(userNameData)
@@ -37,15 +38,21 @@ class startViewController: UIViewController {
     }
     @IBOutlet weak var userNameField: UITextField!
     @IBAction func startButton(_ sender: Any, forEvent event: UIEvent) {
+        
     }
     @IBAction func userChanged(_ sender: Any) {
         name = userNameField.text!
     }
     
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
         
         let referanceURL:String = "https://quizapp-alpi.firebaseio.com/"
         ref = Database.database().reference(fromURL: referanceURL)

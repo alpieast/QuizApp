@@ -83,10 +83,10 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
     func changerForChoicesAndQuestion() {
         if (self.i < questString.count) {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
-        self.btnAnswer1.backgroundColor = UIColor.lightGray
-        self.btnAnswer2.backgroundColor = UIColor.lightGray
-        self.btnAnswer3.backgroundColor = UIColor.lightGray
-        self.btnAnswer4.backgroundColor = UIColor.lightGray
+        self.btnAnswer1.backgroundColor = UIColor.white
+        self.btnAnswer2.backgroundColor = UIColor.white
+        self.btnAnswer3.backgroundColor = UIColor.white
+        self.btnAnswer4.backgroundColor = UIColor.white
         self.btnAnswer1.isEnabled = true
         self.btnAnswer2.isEnabled = true
         self.btnAnswer3.isEnabled = true
@@ -142,6 +142,7 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
             if (self.i < questString.count) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                     self.resultTrueFalse.append("notAnswered")
+                    self.btnEnableFalse()
                     self.changerForChoicesAndQuestion()})
             }else if(self.i == questString.count ){
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
@@ -260,6 +261,7 @@ class ViewController: UIViewController,UITextFieldDelegate, UICollectionViewData
         
         //referanceDB.child("results").childByAutoId().setValue(value3)
         //ref?.child("userResults").childByAutoId().setValue(value3)
+        
         ref?.child("userResults").childByAutoId().setValue(userName)
         ref?.child("userPoints").childByAutoId().setValue(totalPoint)
         
